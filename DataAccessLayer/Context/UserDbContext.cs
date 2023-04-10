@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using EntityLayer.Models;
 using Microsoft.EntityFrameworkCore;
-
 namespace DataAccessLayer.Context
 {
     public class UserDbContext : DbContext
@@ -18,6 +17,10 @@ namespace DataAccessLayer.Context
         public DbSet<UserRoles> UserRoles { get; set; }
         public DbSet<JwtToken> JwtTokens { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Server=37.230.108.246;Database=halk1342_oHalk061020;User ID=skyPeople;Password=pG7@39b@;TrustServerCertificate=True;");
+        }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
