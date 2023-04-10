@@ -1,17 +1,96 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hakdag\\Desktop\\survey-app\\surveyyapptogether\\LST-Survey-API\\CoreApi\\Survey.API\\Survey.API.csproj": {}
+    "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\Survey.API\\Survey.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hakdag\\Desktop\\survey-app\\surveyyapptogether\\LST-Survey-API\\CoreApi\\Survey.API\\Survey.API.csproj": {
+    "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\DataAccessLayer\\DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hakdag\\Desktop\\survey-app\\surveyyapptogether\\LST-Survey-API\\CoreApi\\Survey.API\\Survey.API.csproj",
-        "projectName": "Survey.API",
-        "projectPath": "C:\\Users\\hakdag\\Desktop\\survey-app\\surveyyapptogether\\LST-Survey-API\\CoreApi\\Survey.API\\Survey.API.csproj",
+        "projectUniqueName": "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectName": "DataAccessLayer",
+        "projectPath": "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\DataAccessLayer\\DataAccessLayer.csproj",
         "packagesPath": "C:\\Users\\hakdag\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hakdag\\Desktop\\survey-app\\surveyyapptogether\\LST-Survey-API\\CoreApi\\Survey.API\\obj\\",
+        "outputPath": "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\DataAccessLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\hakdag\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\EntityLayer\\EntityLayer.csproj": {
+                "projectPath": "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\EntityLayer\\EntityLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\EntityLayer\\EntityLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\EntityLayer\\EntityLayer.csproj",
+        "projectName": "EntityLayer",
+        "projectPath": "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\EntityLayer\\EntityLayer.csproj",
+        "packagesPath": "C:\\Users\\hakdag\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\EntityLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hakdag\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,7 +118,80 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\Survey.API\\Survey.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\Survey.API\\Survey.API.csproj",
+        "projectName": "Survey.API",
+        "projectPath": "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\Survey.API\\Survey.API.csproj",
+        "packagesPath": "C:\\Users\\hakdag\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\Survey.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\hakdag\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\DataAccessLayer\\DataAccessLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"

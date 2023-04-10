@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UKMWZlIKdBdF+e0h69Rwfa99uRug4b90pqamIIjg9WQXOtyujnq7Q/JcltFj8jZ5nyXl1U4u+GXkzuV44TJ7kg==",
+  "dgSpecHash": "9DKoAfHZtqaZ66UD9qCDFt+jlopOcS9jkd4P+tcVOhpuTnwVSXO6fZ67LUQpQWPs8MtYDaQACQmTQsdlNMEGgA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hakdag\\Desktop\\survey-app\\surveyyapptogether\\LST-Survey-API\\CoreApi\\EntityLayer\\EntityLayer.csproj",
+  "projectFilePath": "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\EntityLayer\\EntityLayer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

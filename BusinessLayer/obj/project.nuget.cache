@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "68mhDtOEC4GFZOVbUYXDU3QcOc/LlpkBV3XcC8lMCxZR432kN/5bV7bAzW4O3LhgURs0P9UadCxtpeDpj4kfbQ==",
+  "dgSpecHash": "VC3D0lC4BGfGs41HyGn7LXZpqrnpAl6KZEqvK4KKp+jfeTCosjSnOP1ywaGigmKKVhLvm1aN2VGtfEH9v5IGTA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hakdag\\Desktop\\survey-app\\surveyyapptogether\\LST-Survey-API\\CoreApi\\BusinessLayer\\BusinessLayer.csproj",
+  "projectFilePath": "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

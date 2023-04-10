@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hakdag\\Desktop\\survey-app\\surveyyapptogether\\LST-Survey-API\\CoreApi\\EntityLayer\\EntityLayer.csproj": {}
+    "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\EntityLayer\\EntityLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hakdag\\Desktop\\survey-app\\surveyyapptogether\\LST-Survey-API\\CoreApi\\EntityLayer\\EntityLayer.csproj": {
+    "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\EntityLayer\\EntityLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hakdag\\Desktop\\survey-app\\surveyyapptogether\\LST-Survey-API\\CoreApi\\EntityLayer\\EntityLayer.csproj",
+        "projectUniqueName": "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\EntityLayer\\EntityLayer.csproj",
         "projectName": "EntityLayer",
-        "projectPath": "C:\\Users\\hakdag\\Desktop\\survey-app\\surveyyapptogether\\LST-Survey-API\\CoreApi\\EntityLayer\\EntityLayer.csproj",
+        "projectPath": "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\EntityLayer\\EntityLayer.csproj",
         "packagesPath": "C:\\Users\\hakdag\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hakdag\\Desktop\\survey-app\\surveyyapptogether\\LST-Survey-API\\CoreApi\\EntityLayer\\obj\\",
+        "outputPath": "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\EntityLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hakdag\\AppData\\Roaming\\NuGet\\NuGet.Config",
