@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9DKoAfHZtqaZ66UD9qCDFt+jlopOcS9jkd4P+tcVOhpuTnwVSXO6fZ67LUQpQWPs8MtYDaQACQmTQsdlNMEGgA==",
+  "dgSpecHash": "qzEsTA0Q5Xl+yad+olHm3WZIiYqE2TAIxVCSmJiwYmgk8y8gavC3+vD42hZBvZgL2QNswQ25id1c6BBpf0MowA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\EntityLayer\\EntityLayer.csproj",
+  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\surveyApi\\SurveyCoreApi\\EntityLayer\\EntityLayer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

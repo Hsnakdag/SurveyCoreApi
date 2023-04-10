@@ -10,3 +10,15 @@ C:\Users\hakdag\Desktop\Lst-Project\Backend\CoreApi\EntityLayer\obj\Debug\net6.0
 C:\Users\hakdag\Desktop\Lst-Project\Backend\CoreApi\EntityLayer\obj\Debug\net6.0\refint\EntityLayer.dll
 C:\Users\hakdag\Desktop\Lst-Project\Backend\CoreApi\EntityLayer\obj\Debug\net6.0\EntityLayer.pdb
 C:\Users\hakdag\Desktop\Lst-Project\Backend\CoreApi\EntityLayer\obj\Debug\net6.0\ref\EntityLayer.dll
+C:\Users\Administrator\Desktop\surveyApi\SurveyCoreApi\EntityLayer\bin\Debug\net6.0\EntityLayer.deps.json
+C:\Users\Administrator\Desktop\surveyApi\SurveyCoreApi\EntityLayer\bin\Debug\net6.0\EntityLayer.dll
+C:\Users\Administrator\Desktop\surveyApi\SurveyCoreApi\EntityLayer\bin\Debug\net6.0\EntityLayer.pdb
+C:\Users\Administrator\Desktop\surveyApi\SurveyCoreApi\EntityLayer\obj\Debug\net6.0\EntityLayer.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\surveyApi\SurveyCoreApi\EntityLayer\obj\Debug\net6.0\EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\surveyApi\SurveyCoreApi\EntityLayer\obj\Debug\net6.0\EntityLayer.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\surveyApi\SurveyCoreApi\EntityLayer\obj\Debug\net6.0\EntityLayer.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\surveyApi\SurveyCoreApi\EntityLayer\obj\Debug\net6.0\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\surveyApi\SurveyCoreApi\EntityLayer\obj\Debug\net6.0\EntityLayer.dll
+C:\Users\Administrator\Desktop\surveyApi\SurveyCoreApi\EntityLayer\obj\Debug\net6.0\refint\EntityLayer.dll
+C:\Users\Administrator\Desktop\surveyApi\SurveyCoreApi\EntityLayer\obj\Debug\net6.0\EntityLayer.pdb
+C:\Users\Administrator\Desktop\surveyApi\SurveyCoreApi\EntityLayer\obj\Debug\net6.0\ref\EntityLayer.dll

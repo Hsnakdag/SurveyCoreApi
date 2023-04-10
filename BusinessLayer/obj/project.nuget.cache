@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VC3D0lC4BGfGs41HyGn7LXZpqrnpAl6KZEqvK4KKp+jfeTCosjSnOP1ywaGigmKKVhLvm1aN2VGtfEH9v5IGTA==",
+  "dgSpecHash": "w1nHUAl4LpZKTL34LO4+lxwhgWGiBN99Xtfg63gkCtvhU9bBXiMfa5+ju9uc+DKVG9wfT8MQMeJGjUQ4eKhuWw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hakdag\\Desktop\\Lst-Project\\Backend\\CoreApi\\BusinessLayer\\BusinessLayer.csproj",
+  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\surveyApi\\SurveyCoreApi\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
