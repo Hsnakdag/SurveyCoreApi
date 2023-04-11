@@ -9,6 +9,9 @@ namespace DataAccessLayer.Abstract
 {
     public interface IBaseRepository
     {
-        User CreateUser(User user);
+        Task<List<User>> GetAllUsers();
+        Task<User> GetUserById(int id);
+        Task<User> CreateUser(User user);
+        Task DeleteUserById(int id);
     }
 }

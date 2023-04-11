@@ -12,6 +12,7 @@
           "Microsoft.EntityFrameworkCore": "7.0.4",
           "Microsoft.EntityFrameworkCore.Design": "7.0.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.4",
+          "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.6",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
