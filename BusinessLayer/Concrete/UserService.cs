@@ -13,6 +13,11 @@ namespace BusinessLayer.Concrete
     {
         private readonly IBaseRepository _baseRepository;
 
+        public UserService(IBaseRepository baseRepository)
+        {
+            _baseRepository = baseRepository;
+        }
+
         public async Task<User> CreateUser(User user)
         {
            return await _baseRepository.CreateUser(user);

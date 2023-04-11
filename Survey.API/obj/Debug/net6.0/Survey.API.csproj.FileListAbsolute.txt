@@ -123,3 +123,7 @@ C:\Users\hakdag\Desktop\Lst-Project\Backend\CoreApi\Survey.API\obj\Debug\net6.0\
 C:\Users\hakdag\Desktop\Lst-Project\Backend\CoreApi\Survey.API\obj\Debug\net6.0\ref\Survey.API.dll
 C:\Users\hakdag\Desktop\Lst-Project\Backend\CoreApi\Survey.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.Design.dll
 C:\Users\hakdag\Desktop\Lst-Project\Backend\CoreApi\Survey.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.Design.dll
+C:\Users\hakdag\Desktop\Lst-Project\Backend\CoreApi\Survey.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\hakdag\Desktop\Lst-Project\Backend\CoreApi\Survey.API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\Users\hakdag\Desktop\Lst-Project\Backend\CoreApi\Survey.API\bin\Debug\net6.0\BusinessLayer.dll
+C:\Users\hakdag\Desktop\Lst-Project\Backend\CoreApi\Survey.API\bin\Debug\net6.0\BusinessLayer.pdb
