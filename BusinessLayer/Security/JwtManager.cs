@@ -8,16 +8,16 @@ namespace BusinessLayer.Security
 {
     public class JwtManager : IJwtManager
     {
-        private readonly JwtManager _jwtSettings;
-        public JwtManager(JwtManager jwtSettings)
+        private readonly JwtManager _jwtManager;
+        public JwtManager(JwtManager jwtManager)
         {
-            _jwtSettings = jwtSettings;
+            _jwtManager = jwtManager;
         }
 
 
         public string GenerateJSONWebToken(User userInfo, Role roleInfo)
         {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings["Jwt:Key"]));
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtManager["Jwt:Key"]));
             if (securityKey.KeySize < 128)
             {
                 securityKey = new SymmetricSecurityKey(new byte[16]); // Or some other method to generate a larger key
@@ -33,10 +33,10 @@ namespace BusinessLayer.Security
             };
 
             var token = new JwtSecurityToken(
-             issuer: _jwtSettings["Jwt:Issuer"],
-        audience: _jwtSettings["Jwt:Audience"],
+             issuer: _jwtManager["Jwt:Issuer"],
+        audience: _jwtManager["Jwt:Audience"],
                 claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(Convert.ToInt32(_jwtSettings["Jwt:ExpiryInMinutes"])),
+                expires: DateTime.UtcNow.AddMinutes(Convert.ToInt32(_jwtManager["Jwt:ExpiryInMinutes"])),
                 signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
