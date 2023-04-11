@@ -8,16 +8,16 @@ namespace BusinessLayer.Security
 {
     public class JwtManager : IJwtManager
     {
-        private readonly JwtManager _jwtManager;
-        public JwtManager(JwtManager jwtManager)
-        {
-            _jwtManager = jwtManager;
-        }
+        private readonly JwtSettings _jwtSettings;
 
+        public JwtManager(JwtSettings jwtSettings)
+        {
+            _jwtSettings = jwtSettings;
+        }
 
         public string GenerateJSONWebToken(User userInfo, Role roleInfo)
         {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtManager["Jwt:Key"]));
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings["Jwt:Key"]));
             if (securityKey.KeySize < 128)
             {
                 securityKey = new SymmetricSecurityKey(new byte[16]); // Or some other method to generate a larger key
@@ -26,22 +26,19 @@ namespace BusinessLayer.Security
 
             var claims = new[]
             {
-        new Claim(ClaimTypes.Email, userInfo.Email.ToString()),
-        new Claim(ClaimTypes.Role, roleInfo.RoleName),
-        new Claim(JwtRegisteredClaimNames.Jti, userInfo.Password.ToString()),
-
-            };
+            new Claim(ClaimTypes.Email, userInfo.Email.ToString()),
+            new Claim(ClaimTypes.Role, roleInfo.RoleName),
+            new Claim(JwtRegisteredClaimNames.Jti, userInfo.Password.ToString()),
+        };
 
             var token = new JwtSecurityToken(
-             issuer: _jwtManager["Jwt:Issuer"],
-        audience: _jwtManager["Jwt:Audience"],
+                issuer: _jwtSettings["Jwt:Issuer"],
+                audience: _jwtSettings["Jwt:Audience"],
                 claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(Convert.ToInt32(_jwtManager["Jwt:ExpiryInMinutes"])),
+                expires: DateTime.UtcNow.AddMinutes(Convert.ToInt32(_jwtSettings["Jwt:ExpiryInMinutes"])),
                 signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-
-        
     }
 }
