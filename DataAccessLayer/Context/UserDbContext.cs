@@ -9,13 +9,17 @@ namespace DataAccessLayer.Context
 {
     public class UserDbContext : DbContext
     {
+        public UserDbContext()
+        {
+        }
+
         public UserDbContext(DbContextOptions<UserDbContext> options) : base(options) 
         { 
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<UserRoles> UserRoles { get; set; }
-        public DbSet<JwtToken> JwtTokens { get; set; }
+    
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -34,14 +38,10 @@ namespace DataAccessLayer.Context
                 .HasForeignKey(ur => ur.UserId);
 
             modelBuilder.Entity<UserRoles>()
-                .HasOne(ur => ur.Role)
+               .HasOne(ur => ur.Role)
                 .WithMany(r => r.UserRoles)
                 .HasForeignKey(ur => ur.RoleId);
 
-            modelBuilder.Entity<JwtToken>()
-                .HasOne(t => t.User)
-                .WithMany(u => u.Token)
-                .HasForeignKey(t => t.UserId);
         }
     }
     }
