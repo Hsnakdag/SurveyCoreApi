@@ -13,5 +13,7 @@ namespace BusinessLayer.Abstract
         Task<User> GetUserById(int id);
         Task<User> CreateUser(User user);
         Task DeleteUserById(int id);
+        Task<User> GetUserByMailAndPassword(string email, string password);
+        Task<string> GetUserRolesByEmail(string email);
     }
 }

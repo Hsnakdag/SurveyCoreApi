@@ -24,14 +24,14 @@ namespace DataAccessLayer.Concrete
         }
         public async Task<List<User>> GetAllUsers()
         {
-                using(var userDbContext = new UserDbContext())
+            using (var userDbContext = new UserDbContext())
             {
                 return await userDbContext.Users.ToListAsync();
             }
-            
-        
+
+
         }
-       public async Task<User> GetUserById(int id)
+        public async Task<User> GetUserById(int id)
         {
 
             using (var userDbContext = new UserDbContext())
@@ -40,9 +40,9 @@ namespace DataAccessLayer.Concrete
             }
 
         }
-       public async Task DeleteUserById(int id)
+        public async Task DeleteUserById(int id)
         {
-            using(var userDbContext = new UserDbContext())
+            using (var userDbContext = new UserDbContext())
             {
                 var user = GetUserById(id);
                 if (user != null)
@@ -54,13 +54,39 @@ namespace DataAccessLayer.Concrete
         }
         public async Task<User> GetUserByMailAndPassword(string email, string password)
         {
-            using(var userDbContext = new UserDbContext())
+            using (var userDbContext = new UserDbContext())
             {
                 return await userDbContext.Users.FirstOrDefaultAsync(u => u.Email == email && u.Password == password);
             }
-            
-        }
 
-     
+        }
+        public async Task<string> GetUserRolesByEmail(string email)
+        {
+            using (var userDbContext = new UserDbContext())
+            {
+                var user = await userDbContext.Users.Include(u => u.UserRoles)
+                    .ThenInclude(ur => ur.Role)
+                    .FirstOrDefaultAsync(u => u.Email == email);
+
+                if (user == null)
+                {
+                    return null;
+                }
+
+                var role = user.UserRoles.FirstOrDefault()?.Role?.RoleName;
+                return role;
+            }
+        }
+        //public async Task<List<User>> GetUserRolesByEmail(string email)
+        //{
+        //    using(var userDbContext = new UserDbContext())
+        //    {
+        //        return await userDbContext.Users.Include(u => u.UserRoles)
+        //    .ThenInclude(ur => ur.Role)
+        //    .Where(u => u.Email == email)
+        //    .ToListAsync();
+        //    }
+        //}
+
     }
-}
+    }

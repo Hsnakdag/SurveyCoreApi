@@ -3,6 +3,7 @@ using BusinessLayer.Concrete;
 using BusinessLayer.Security;
 using DataAccessLayer.Abstract;
 using EntityLayer.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,10 +21,13 @@ namespace Survey.API.Controllers
             _jwtManager = jwtManager;
         }
 
-        public IActionResult Login([FromBody] User login)
+        [AllowAnonymous]
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] User login)
         {
             IActionResult response = Unauthorized();
-            var user = _jwtManager.AuthenticateUser(login);
+         
+            var user = await _jwtManager.AuthenticateUser(login);
             if (user != null)
             {
                 var tokenString = _jwtManager.GenerateJSONWebToken(user);

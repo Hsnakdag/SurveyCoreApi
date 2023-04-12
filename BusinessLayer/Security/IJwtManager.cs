@@ -9,7 +9,7 @@ namespace BusinessLayer.Security
 {
     public interface IJwtManager
     {
-        string AuthenticateUser(User login);
-        string GenerateJSONWebToken(User userInfo, Role roleInfo);
+        Task<User> AuthenticateUser(User login);
+        Task<string> GenerateJSONWebToken(User userInfo);
     }
 }

@@ -37,5 +37,13 @@ namespace BusinessLayer.Concrete
         {
            return await _baseRepository.GetUserById(id);
         }
+        public async Task<User> GetUserByMailAndPassword(string email, string password)
+        {
+            return await _baseRepository.GetUserByMailAndPassword(email, password);
+        }
+        public async Task<string> GetUserRolesByEmail(string email)
+        {
+            return await _baseRepository.GetUserRolesByEmail(email);
+        }
     }
 }

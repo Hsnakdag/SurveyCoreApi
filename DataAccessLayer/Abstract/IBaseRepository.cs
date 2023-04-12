@@ -13,6 +13,7 @@ namespace DataAccessLayer.Abstract
         Task<User> GetUserById(int id);
         Task<User> CreateUser(User user);
         Task DeleteUserById(int id);
-        Task GetUserByMailAndPassword(string mail, string password);
+        Task<User> GetUserByMailAndPassword(string email, string password);
+        Task<string> GetUserRolesByEmail(string email);
     }
 }
