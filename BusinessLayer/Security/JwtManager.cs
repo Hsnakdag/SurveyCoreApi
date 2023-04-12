@@ -1,4 +1,6 @@
-﻿using EntityLayer.Models;
+﻿using DataAccessLayer.Abstract;
+using EntityLayer.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -10,10 +12,11 @@ namespace BusinessLayer.Security
     public class JwtManager : IJwtManager
     {
         private readonly IConfiguration _configuration;
-
-        public JwtManager(IConfiguration configuration)
+        private readonly IBaseRepository _baseRepository;
+        public JwtManager(IConfiguration configuration, IBaseRepository baseRepository)
         {
             _configuration = configuration;
+            _baseRepository = baseRepository;
         }
 
         public string GenerateJSONWebToken(User userInfo, Role roleInfo)
@@ -40,6 +43,12 @@ namespace BusinessLayer.Security
                 signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+        private async User AuthenticateUser(User login)
+        {
+            var user = _baseRepository.GetUserByMailAndPassword(login.Email, login.Password);
+            return await user;
         }
     }
 }

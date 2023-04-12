@@ -52,6 +52,14 @@ namespace DataAccessLayer.Concrete
                 }
             }
         }
+        public async Task<User> GetUserByMailAndPassword(string email, string password)
+        {
+            using(var userDbContext = new UserDbContext())
+            {
+                return await userDbContext.Users.FirstOrDefaultAsync(u => u.Email == email && u.Password == password);
+            }
+            
+        }
 
      
     }

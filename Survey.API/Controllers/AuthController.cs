@@ -1,5 +1,7 @@
 ﻿using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
+using BusinessLayer.Security;
+using DataAccessLayer.Abstract;
 using EntityLayer.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,11 +13,28 @@ namespace Survey.API.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IUserService _userService;
-
-        public AuthController(IUserService userService)
+        private readonly IJwtManager _jwtManager;
+        public AuthController(IUserService userService , IJwtManager jwtManager)
         {
             _userService = userService;
+            _jwtManager = jwtManager;
         }
+
+        public IActionResult Login([FromBody] User login)
+        {
+            IActionResult response = Unauthorized();
+            var user = _jwtManager.AuthenticateUser(login);
+            if (user != null)
+            {
+                var tokenString = _jwtManager.GenerateJSONWebToken(user);
+                response = Ok(new { token = tokenString });
+            }
+
+            return response;
+        }
+
+
+
 
         [HttpGet]
         public async Task<List<User>> GetUsers()
@@ -39,5 +58,6 @@ namespace Survey.API.Controllers
         {
             await _userService.DeleteUserById(id);
         }
+
     }
 }
