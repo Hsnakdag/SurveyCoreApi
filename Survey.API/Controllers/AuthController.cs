@@ -23,7 +23,7 @@ namespace Survey.API.Controllers
             _jwtManager = jwtManager;
         }
 
-        [AllowAnonymous]
+        [Authorize(Roles ="admin")]
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] UserLoginDto loginDto)
         {
