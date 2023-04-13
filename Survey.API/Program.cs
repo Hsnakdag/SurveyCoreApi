@@ -22,6 +22,7 @@ internal class Program
         builder.Services.AddAutoMapper(typeof(Program));
         builder.Services.AddAutoMapper(typeof(UserProfile));
         builder.Services.AddEndpointsApiExplorer();
+
         builder.Services.AddSwaggerGen(option =>
         {
             option.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo API", Version = "v1" });
@@ -78,7 +79,7 @@ internal class Program
         builder.Services.AddAuthorization();
 
         var app = builder.Build();
-
+        
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {

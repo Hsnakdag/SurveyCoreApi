@@ -23,7 +23,7 @@ namespace Survey.API.Controllers
             _jwtManager = jwtManager;
         }
 
-        [Authorize(Roles ="admin")]
+        [AllowAnonymous]
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] UserLoginDto loginDto)
         {
@@ -49,6 +49,20 @@ namespace Survey.API.Controllers
             return Ok();
         }
 
+        [Authorize(Roles = "admin")]
+        [HttpGet("users")]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            var users = await _userService.GetAllUsers();
+            if (users == null || users.Count == 0)
+            {
+                return NotFound();
+            }
+
+            var userDtos = _mapper.Map<List<UserLoginDto>>(users);
+            return Ok(userDtos);
+        }
+        [Authorize(Roles = "admin")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -61,7 +75,7 @@ namespace Survey.API.Controllers
             var userDto = _mapper.Map<UserLoginDto>(user);
             return Ok(userDto);
         }
-
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
