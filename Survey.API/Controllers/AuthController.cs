@@ -58,14 +58,14 @@ namespace Survey.API.Controllers
                 return NotFound();
             }
 
-            var userDto = _mapper.Map<User, UserLoginDto>(user);
+            var userDto = _mapper.Map<UserLoginDto>(user);
             return Ok(userDto);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            await _userService.DeleteUserById(id);
+            await _userService.DeleteUserById(id); 
             return Ok();
         }
     }
