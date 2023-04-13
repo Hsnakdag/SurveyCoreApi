@@ -1,5 +1,5 @@
-﻿using DataAccessLayer.Abstract;
-using DataAccessLayer.Context;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Context;
 using EntityLayer.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.Concrete
+namespace BusinessLayer.Concrete
 {
     public class BaseRepository : IBaseRepository
     {

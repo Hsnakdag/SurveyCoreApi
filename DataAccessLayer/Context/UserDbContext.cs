@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EntityLayer.Models;
 using Microsoft.EntityFrameworkCore;
-namespace DataAccessLayer.Context
+namespace BusinessLayer.Context
 {
     public class UserDbContext : DbContext
     {
