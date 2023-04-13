@@ -1,7 +1,7 @@
 ﻿using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
 using BusinessLayer.Security;
-using DataAccessLayer.Abstract;
+using BusinessLayer.Abstract;
 using EntityLayer.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;

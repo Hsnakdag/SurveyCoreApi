@@ -127,3 +127,5 @@ C:\Users\hakdag\Desktop\Lst-Project\Backend\CoreApi\Survey.API\bin\Debug\net6.0\
 C:\Users\hakdag\Desktop\Lst-Project\Backend\CoreApi\Survey.API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
 C:\Users\hakdag\Desktop\Lst-Project\Backend\CoreApi\Survey.API\bin\Debug\net6.0\BusinessLayer.dll
 C:\Users\hakdag\Desktop\Lst-Project\Backend\CoreApi\Survey.API\bin\Debug\net6.0\BusinessLayer.pdb
+C:\Users\hakdag\Desktop\Lst-Project\Backend\CoreApi\Survey.API\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\hakdag\Desktop\Lst-Project\Backend\CoreApi\Survey.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
