@@ -1,11 +1,10 @@
-﻿using BusinessLayer.Abstract;
-using BusinessLayer.Concrete;
-using BusinessLayer.Security;
+﻿using AutoMapper;
 using BusinessLayer.Abstract;
+using BusinessLayer.Security;
 using EntityLayer.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Survey.API.Controllers
 {
@@ -14,20 +13,23 @@ namespace Survey.API.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly IMapper _mapper;
         private readonly IJwtManager _jwtManager;
-        public AuthController(IUserService userService , IJwtManager jwtManager)
+
+        public AuthController(IUserService userService, IMapper mapper, IJwtManager jwtManager)
         {
             _userService = userService;
+            _mapper = mapper;
             _jwtManager = jwtManager;
         }
 
-        [AllowAnonymous]
+        [Authorize(Roles ="admin")]
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] User login)
+        public async Task<IActionResult> Login([FromBody] UserLoginDto loginDto)
         {
             IActionResult response = Unauthorized();
-         
-            var user = await _jwtManager.AuthenticateUser(login);
+
+            var user = await _userService.GetUserByMailAndPassword(loginDto.Email, loginDto.Password);
             if (user != null)
             {
                 var tokenString = _jwtManager.GenerateJSONWebToken(user);
@@ -37,31 +39,34 @@ namespace Survey.API.Controllers
             return response;
         }
 
-
-
-
-        [HttpGet]
-        public async Task<List<User>> GetUsers()
+        [AllowAnonymous]
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] UserLoginDto userDto)
         {
-            return await _userService.GetAllUsers();
-        }
+            var user = _mapper.Map<User>(userDto);
+            await _userService.CreateUser(user);
 
-        [HttpPost]
-        public async Task<User> Post([FromBody]User User)
-        {
-            return await _userService.CreateUser(User);
+            return Ok();
         }
 
         [HttpGet("{id}")]
-        public async Task<User> GetUserById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            return await _userService.GetUserById(id);
-        }
-        [HttpDelete("{id}")]
-        public async Task DeleteUserById(int id)
-        {
-            await _userService.DeleteUserById(id);
+            var user = await _userService.GetUserById(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var userDto = _mapper.Map<UserLoginDto>(user);
+            return Ok(userDto);
         }
 
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _userService.DeleteUserById(id); 
+            return Ok();
+        }
     }
 }
