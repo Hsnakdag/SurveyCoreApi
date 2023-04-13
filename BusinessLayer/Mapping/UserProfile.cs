@@ -11,9 +11,14 @@ namespace BusinessLayer.Mapping
     {
         public UserProfile()
         {
+            CreateMap<UserLoginDto, User>()
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
+                .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.Password));
+
             CreateMap<User, UserLoginDto>()
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
                 .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.Password));
         }
     }
+    
 }
