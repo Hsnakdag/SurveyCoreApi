@@ -1,7 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
 using BusinessLayer.Security;
-using BusinessLayer.Abstract;
 using EntityLayer.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -39,7 +38,7 @@ namespace Survey.API.Controllers
 
 
 
-
+        [Authorize(Roles ="user")]
         [HttpGet]
         public async Task<List<User>> GetUsers()
         {
