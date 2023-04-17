@@ -1,5 +1,4 @@
 ﻿using BusinessLayer.Abstract;
-using BusinessLayer.Abstract;
 using EntityLayer.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -14,12 +13,10 @@ namespace BusinessLayer.Security
     public class JwtManager : IJwtManager
     {
         private readonly IConfiguration _configuration;
-        private readonly IBaseRepository _baseRepository;
         private readonly IUserService _userService;
-        public JwtManager(IConfiguration configuration, IBaseRepository baseRepository, IUserService userService)
+        public JwtManager(IConfiguration configuration, IUserService userService)
         {
             _configuration = configuration;
-            _baseRepository = baseRepository;
             _userService = userService;
         }
 
