@@ -2,6 +2,7 @@
 using EntityLayer.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 using System.Data;
 using System.IdentityModel.Tokens.Jwt;
@@ -31,12 +32,11 @@ namespace BusinessLayer.Security
            var roles = await _userService.GetUserRolesByEmail(userInfo.Email);
 
             var claims = new[]
-            {
-            new Claim(ClaimTypes.Email, userInfo.Email.ToString()),
-            new Claim(ClaimTypes.Role, roles),
-            new Claim(JwtRegisteredClaimNames.Jti, userInfo.Password.ToString()),
-        };
-
+ {
+    new Claim(System.IdentityModel.Tokens.Jwt.JwtRegisteredClaimNames.Email, userInfo.Email.ToString()),
+    new Claim(System.IdentityModel.Tokens.Jwt.JwtRegisteredClaimNames.Amr, roles),
+    new Claim(System.IdentityModel.Tokens.Jwt.JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+};
             var token = new JwtSecurityToken(
                 issuer: _configuration["Jwt:Issuer"],
                 audience: _configuration["Jwt:Audience"],

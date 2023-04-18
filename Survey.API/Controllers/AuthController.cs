@@ -62,7 +62,7 @@ namespace Survey.API.Controllers
             var userDtos = _mapper.Map<List<UserLoginDto>>(users);
             return Ok(userDtos);
         }
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "user")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
