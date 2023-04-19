@@ -28,8 +28,6 @@ namespace BusinessLayer.Concrete
             {
                 return await userDbContext.Users.ToListAsync();
             }
-
-
         }
         public async Task<User> GetUserById(int id)
         {
@@ -38,7 +36,6 @@ namespace BusinessLayer.Concrete
             {
                 return await userDbContext.Users.FindAsync(id);
             }
-
         }
         public async Task DeleteUserById(int id)
         {
@@ -58,7 +55,6 @@ namespace BusinessLayer.Concrete
             {
                 return await userDbContext.Users.FirstOrDefaultAsync(u => u.Email == email && u.Password == password);
             }
-
         }
         public async Task<string> GetUserRolesByEmail(string email)
         {
@@ -72,7 +68,6 @@ namespace BusinessLayer.Concrete
                 {
                     return null;
                 }
-
                 var role = user.UserRoles.FirstOrDefault()?.Role?.RoleName;
                 return role;
             }
@@ -87,6 +82,5 @@ namespace BusinessLayer.Concrete
         //    .ToListAsync();
         //    }
         //}
-
     }
     }
